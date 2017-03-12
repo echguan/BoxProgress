@@ -15,6 +15,7 @@
 		3B7C8E7C1E61D2180063110E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C8E7A1E61D2180063110E /* LaunchScreen.storyboard */; };
 		3B7C8E871E61D2180063110E /* BoxProgressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C8E861E61D2180063110E /* BoxProgressTests.m */; };
 		3B7C8E921E61D2180063110E /* BoxProgressUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C8E911E61D2180063110E /* BoxProgressUITests.m */; };
+		3B7C8EA11E7526A00063110E /* YGCustomProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C8EA01E7526A00063110E /* YGCustomProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		3B7C8E8D1E61D2180063110E /* BoxProgressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxProgressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7C8E911E61D2180063110E /* BoxProgressUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoxProgressUITests.m; sourceTree = "<group>"; };
 		3B7C8E931E61D2180063110E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B7C8E9F1E7526A00063110E /* YGCustomProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCustomProgressView.h; sourceTree = "<group>"; };
+		3B7C8EA01E7526A00063110E /* YGCustomProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCustomProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				3B7C8E701E61D2180063110E /* AppDelegate.m */,
 				3B7C8E721E61D2180063110E /* ViewController.h */,
 				3B7C8E731E61D2180063110E /* ViewController.m */,
+				3B7C8E9F1E7526A00063110E /* YGCustomProgressView.h */,
+				3B7C8EA01E7526A00063110E /* YGCustomProgressView.m */,
 				3B7C8E751E61D2180063110E /* Main.storyboard */,
 				3B7C8E781E61D2180063110E /* Assets.xcassets */,
 				3B7C8E7A1E61D2180063110E /* LaunchScreen.storyboard */,
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7C8EA11E7526A00063110E /* YGCustomProgressView.m in Sources */,
 				3B7C8E741E61D2180063110E /* ViewController.m in Sources */,
 				3B7C8E711E61D2180063110E /* AppDelegate.m in Sources */,
 				3B7C8E6E1E61D2180063110E /* main.m in Sources */,
