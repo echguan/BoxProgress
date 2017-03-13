@@ -13,8 +13,15 @@ typedef enum{
 }ProgressType;
 @interface YGCustomProgressView : UIView
 
-@property(nonatomic, assign)CGFloat progress;
-@property(nonatomic, strong)UIColor *progressColor;
+@property(nonatomic, strong)UIColor *progressTinkColor;
 @property(nonatomic, strong)UIColor *strokeColor;
+@property(nonatomic, strong)UIColor *progressLabelTextColor;
+@property(nonatomic, strong)UIFont  *progressLabelFont;
 
+@property(nonatomic, assign)CGFloat progress;
+@property(nonatomic, assign)CGFloat progressWdth;
+
+@property(nonatomic, assign)BOOL isShowProgressLabel;
+
+-(instancetype)initWithFrame:(CGRect)frame andProgressType:(ProgressType)progressType;
 @end
