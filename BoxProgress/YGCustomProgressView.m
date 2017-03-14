@@ -142,12 +142,11 @@
 -(void)setIsShowProgressLabel:(BOOL)isShowProgressLabel{
     _isShowProgressLabel = isShowProgressLabel;
     if(isShowProgressLabel && !_progressLabel){
-        _progressLabel = [UILabel new];
+        _progressLabel = [[UILabel alloc] initWithFrame:self.bounds];
         _progressLabel.font = [UIFont systemFontOfSize:8];
         _progressLabel.textColor = [[UIColor alloc] initWithRed:232.0 / 255 green:110.0 / 255 blue:131.0 / 255 alpha:1.0];
         _progressLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_progressLabel];
-        _progressLabel = [[UILabel alloc] initWithFrame:self.frame];
     }
 }
 
