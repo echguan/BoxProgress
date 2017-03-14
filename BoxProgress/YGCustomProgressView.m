@@ -7,6 +7,7 @@
 //
 
 #import "YGCustomProgressView.h"
+#define DEGREES_2_RADIANS(x) ((M_PI_2 / 360.0) * (x))
 
 @interface YGCustomProgressView()
 
@@ -50,15 +51,43 @@
 }
 
 -(void)drawRect:(CGRect)rect{
+    CGPoint centerPoint = CGPointMake(rect.size.width / 2, rect.size.height / 2);
+
     switch (_progressType) {
         case CircleTypeProgress:
+        case RingTypeProgress:
         {
+            CGFloat radius = MIN(rect.size.height, rect.size.width) / 2;
+            CGContextRef context = UIGraphicsGetCurrentContext();
             
+            [self.trackTintColor setFill];
+            CGMutablePathRef trackPath = CGPathCreateMutable();
+            CGPathMoveToPoint(trackPath, NULL, centerPoint.x, centerPoint.y);
+            CGPathAddArc(trackPath, NULL, centerPoint.x, centerPoint.y, radius, DEGREES_2_RADIANS(0), DEGREES_2_RADIANS(360), NO);
+            CGPathCloseSubpath(trackPath);
+            CGContextAddPath(context, trackPath);
+            CGContextFillPath(context);
+            CGPathRelease(trackPath);
+            
+            [self.progressTintColor setFill];
+            CGMutablePathRef progressPath = CGPathCreateMutable();
+            CGPathMoveToPoint(progressPath, NULL, centerPoint.x, centerPoint.y);
+            CGPathAddArc(progressPath, NULL, centerPoint.x, centerPoint.y, radius, -M_PI_2, M_PI*2*self.progress-M_PI_2, NO);
+            CGPathCloseSubpath(progressPath);
+            CGContextAddPath(context, progressPath);
+            CGContextFillPath(context);
+            CGPathRelease(progressPath);
+            if(_progressType == RingTypeProgress){
+                CGContextSetBlendMode(context, kCGBlendModeClear);
+                CGFloat innerRadius = radius - _progressWidth;
+                CGPoint newCenterPoint = CGPointMake(centerPoint.x - innerRadius, centerPoint.y - innerRadius);
+                CGContextAddEllipseInRect(context, CGRectMake(newCenterPoint.x, newCenterPoint.y, innerRadius*2, innerRadius*2));
+                CGContextFillPath(context);
+            }
         }
             break;
         case BoxTypeProgress:
         {
-            CGPoint centerPoint = CGPointMake(rect.size.height / 2, rect.size.width / 2);
             
             CGContextRef context = UIGraphicsGetCurrentContext();
             

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 typedef enum{
     CircleTypeProgress,
+    RingTypeProgress,
     BoxTypeProgress
 }ProgressType;
 @interface YGCustomProgressView : UIView

@@ -33,7 +33,7 @@
     if(!_rectProgressView){
         CGFloat viewWidth = 150;
         CGFloat viewHeight = 200;
-        _rectProgressView = [[YGCustomProgressView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - viewWidth) / 2, (self.view.frame.size.height - viewHeight) / 2, viewWidth, viewHeight) andProgressType:BoxTypeProgress];
+        _rectProgressView = [[YGCustomProgressView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - viewWidth) / 2, (self.view.frame.size.height - viewHeight) / 2, viewWidth, viewHeight) andProgressType:CircleTypeProgress];
         [self.view addSubview:_rectProgressView];
         _rectProgressView.trackTintColor = [UIColor clearColor];
         _rectProgressView.progressTintColor = [[UIColor alloc] initWithRed:43.0 / 255 green:216.0 / 255 blue:186.0 / 255 alpha:1.0];
