@@ -7,21 +7,52 @@
 //
 
 #import "ViewController.h"
-
+#import "YGCustomProgressView.h"
 @interface ViewController ()
-
+@property (nonatomic, strong)YGCustomProgressView *rectProgressView;
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    NSTimer *_progressTimer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initContent];
+    [self initTimer];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)initContent{
+    if(!_rectProgressView){
+        CGFloat viewWidth = 150;
+        CGFloat viewHeight = 200;
+        _rectProgressView = [[YGCustomProgressView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - viewWidth) / 2, (self.view.frame.size.height - viewHeight) / 2, viewWidth, viewHeight) andProgressType:BoxTypeProgress];
+        [self.view addSubview:_rectProgressView];
+        _rectProgressView.trackTintColor = [UIColor clearColor];
+        _rectProgressView.progressTintColor = [[UIColor alloc] initWithRed:43.0 / 255 green:216.0 / 255 blue:186.0 / 255 alpha:1.0];
+        _rectProgressView.progressWidth = 3;
+        _rectProgressView.isShowProgressLabel = NO;
+        _rectProgressView.progress = 0.0;
+        _rectProgressView.userInteractionEnabled = NO;
+    }
+}
+
+-(void)initTimer{
+    _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(testShow) userInfo:nil repeats:YES];
+}
+
+-(void)testShow{
+    _rectProgressView.progress += 0.01;
+    if(_rectProgressView.progress >= 1.0){
+        [_progressTimer invalidate],_progressTimer = nil;
+    }
 }
 
 @end
