@@ -23,6 +23,6 @@ typedef enum{
 @property(nonatomic, assign)CGFloat progressWidth;
 
 @property(nonatomic, assign)BOOL isShowProgressLabel;
-
+@property(nonatomic, assign)BOOL clockwise;//for circle && ring default:NO
 -(instancetype)initWithFrame:(CGRect)frame andProgressType:(ProgressType)progressType;
 @end

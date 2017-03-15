@@ -72,7 +72,7 @@
             [self.progressTintColor setFill];
             CGMutablePathRef progressPath = CGPathCreateMutable();
             CGPathMoveToPoint(progressPath, NULL, centerPoint.x, centerPoint.y);
-            CGPathAddArc(progressPath, NULL, centerPoint.x, centerPoint.y, radius, -M_PI_2, M_PI*2*self.progress-M_PI_2, NO);
+            CGPathAddArc(progressPath, NULL, centerPoint.x, centerPoint.y, radius, -M_PI_2, _clockwise ? -M_PI*2*self.progress-M_PI_2 : M_PI*2*self.progress-M_PI_2, _clockwise);
             CGPathCloseSubpath(progressPath);
             CGContextAddPath(context, progressPath);
             CGContextFillPath(context);
@@ -171,6 +171,10 @@
         _progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)(progress * 100)];
     }
     [self setNeedsDisplay];
+}
+
+-(void)setClockwise:(BOOL)clockwise{
+    _clockwise = clockwise;
 }
 
 //- (void)setProgressWidth:(CGFloat)progressWidth

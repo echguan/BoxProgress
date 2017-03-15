@@ -40,6 +40,7 @@
         _rectProgressView.progressWidth = 3;
         _rectProgressView.isShowProgressLabel = YES;
         _rectProgressView.progress = 0.0;
+        _rectProgressView.clockwise = YES;
         _rectProgressView.userInteractionEnabled = NO;
     }
 }
