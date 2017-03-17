@@ -77,5 +77,14 @@
     [self initContentWithType:BoxTypeProgress
      ];
 }
+- (IBAction)showRectProgress:(id)sender {
+    [_rectProgressView removeFromSuperview];
+    _rectProgressView = nil;
+    [_progressTimer invalidate],_progressTimer = nil;
+    [self initTimer];
+    [self initContentWithType:RectTypeProgress
+     ];
+    
+}
 
 @end

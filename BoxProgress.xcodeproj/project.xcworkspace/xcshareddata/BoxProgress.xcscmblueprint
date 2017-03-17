@@ -4,12 +4,12 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "5C30C493AD1A63C73FDF928CF39CB5A825E2080F" : 9223372036854775807,
+    "7BA3AEF7D620CC2B45BB0DD22E26DE5DB960A735" : 9223372036854775807,
     "5C99A9EE7FAFD8EC22CB6873084F3043BFD82201" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "17AFC69F-D7C9-42CB-96BD-681E5EE04CA7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "5C30C493AD1A63C73FDF928CF39CB5A825E2080F" : "",
+    "7BA3AEF7D620CC2B45BB0DD22E26DE5DB960A735" : "",
     "5C99A9EE7FAFD8EC22CB6873084F3043BFD82201" : "BoxProgress\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "BoxProgress",
@@ -19,12 +19,12 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/echguan\/BoxProgress",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C30C493AD1A63C73FDF928CF39CB5A825E2080F"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C99A9EE7FAFD8EC22CB6873084F3043BFD82201"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/echguan\/BoxProgress",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C99A9EE7FAFD8EC22CB6873084F3043BFD82201"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7BA3AEF7D620CC2B45BB0DD22E26DE5DB960A735"
     }
   ]
 }

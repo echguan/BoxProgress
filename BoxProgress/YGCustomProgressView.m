@@ -132,6 +132,41 @@
             CGContextFillPath(context);
         }
             break;
+        case RectTypeProgress:
+        case BorderTypeProgress:
+        {
+            CGContextRef context = UIGraphicsGetCurrentContext();
+            
+            [self.trackTintColor setFill];
+            CGMutablePathRef trackPath = CGPathCreateMutable();
+            CGPathMoveToPoint(trackPath, NULL, centerPoint.x, centerPoint.y);
+            CGPathAddRect(trackPath, NULL, rect);
+            CGPathCloseSubpath(trackPath);
+            CGContextAddPath(context, trackPath);
+            CGContextFillPath(context);
+            CGPathRelease(trackPath);
+            
+            if(_progressType == BorderTypeProgress){
+                [[UIColor whiteColor] setFill];
+                CGMutablePathRef clearPath = CGPathCreateMutable();
+                CGPathMoveToPoint(clearPath, NULL, centerPoint.x, centerPoint.y);
+                CGPathAddRect(clearPath, NULL, CGRectMake(_borderWidth, _borderWidth, rect.size.width - _borderWidth * 2, rect.size.height - _borderWidth * 2));
+                CGPathCloseSubpath(clearPath);
+                CGContextAddPath(context, clearPath);
+                CGContextFillPath(context);
+                CGPathRelease(clearPath);
+            }
+            
+            [self.progressTintColor setFill];
+            CGMutablePathRef progressPath = CGPathCreateMutable();
+            CGPathMoveToPoint(progressPath, NULL, centerPoint.x, centerPoint.y);
+            CGPathAddRect(progressPath, NULL, CGRectMake(_borderWidth, rect.size.height - self.progress * (rect.size.height - _borderWidth * 2) - _borderWidth, rect.size.width - _borderWidth * 2,  self.progress * (rect.size.height - _borderWidth * 2)));
+            CGPathCloseSubpath(progressPath);
+            CGContextAddPath(context, progressPath);
+            CGContextFillPath(context);
+            CGPathRelease(progressPath);
+        }
+            break;
         default:
             break;
     }

@@ -10,7 +10,9 @@
 typedef enum{
     CircleTypeProgress,
     RingTypeProgress,
-    BoxTypeProgress
+    BoxTypeProgress,
+    RectTypeProgress,
+    BorderTypeProgress
 }ProgressType;
 @interface YGCustomProgressView : UIView
 
@@ -21,6 +23,8 @@ typedef enum{
 
 @property(nonatomic, assign)CGFloat progress;
 @property(nonatomic, assign)CGFloat progressWidth;
+
+@property(nonatomic, assign)CGFloat borderWidth;//bordertype border width
 
 @property(nonatomic, assign)BOOL isShowProgressLabel;
 @property(nonatomic, assign)BOOL clockwise;//for circle && ring default:NO
